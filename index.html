@@ -25,18 +25,16 @@
 			var oOl = oBanner.children[1];
 			var aLi = oUl.children;
 			var aBtn = oOl.children;
-			var aa=2;
 			var x = 0;
 			var iNow=null;
 			oUl.addEventListener('touchstart',function(ev){
 				oUl.style.WebkitTransition = 'none';
-				var oTouch = ev.targetTouches[0];//开始触碰
-				//var disX = oTouch.pageX - x;	//点击位置
-				var downX = oTouch.pageX;		//触碰页面到X轴的距离
-				var disX = downX-x;				//触碰点的距离
+				var oTouch = ev.targetTouches[0];
+				var downX = oTouch.pageX;		
+				var disX = downX-x;				
 				function fnMove(ev){
-					var oTouch = ev.targetTouches[0];//开始触碰
-					x = oTouch.pageX - disX;         //事件源移动了-点击位置
+					var oTouch = ev.targetTouches[0];
+					x = oTouch.pageX - disX;        
 					oUl.style.WebkitTransform='translate3d('+x+'px,0px,0px)';
 				};
 				function fnEnd(ev){
